@@ -791,7 +791,7 @@ int uart_putchar(char c, FILE *)
 void lcd_splash()
 {
 	lcd_clear(); // clears display and homes screen
-	lcd_printf_P(PSTR("\n Original Prusa i3\n   Prusa Research\n%20.20S"), PSTR(FW_VERSION));
+	lcd_printf_P(PSTR("\n    MX i3\n   MX Research\n%20.20S"), PSTR(FW_VERSION));
 }
 
 
@@ -5023,10 +5023,12 @@ void process_commands()
                 SERIAL_PROTOCOLPGM("\nZ search height: ");
                 SERIAL_PROTOCOL(MESH_HOME_Z_SEARCH);
                 SERIAL_PROTOCOLLNPGM("\nMeasured points:");
+                /** MX Research - 计算Mesh Bed中间值 */
+                float midPoint = mbl.z_values[((MESH_NUM_Y_POINTS+1)/2)-1][((MESH_NUM_Y_POINTS+1)/2)-1];
                 for (uint8_t y = MESH_NUM_Y_POINTS; y-- > 0;) {
                     for (uint8_t x = 0; x < MESH_NUM_X_POINTS; x++) {
                         SERIAL_PROTOCOLPGM("  ");
-                        SERIAL_PROTOCOL_F(mbl.z_values[y][x], 5);
+                        SERIAL_PROTOCOL_F(mbl.z_values[y][x]-midPoint, 5);
                     }
                     SERIAL_PROTOCOLLN();
                 }

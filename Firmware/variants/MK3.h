@@ -18,7 +18,7 @@
 #define NOZZLE_TYPE "E3Dv6full"
 
 // Printer name
-#define CUSTOM_MENDEL_NAME "Prusa i3 MK3"
+#define CUSTOM_MENDEL_NAME "MX i3 MK3S+"
 
 // Electronics
 #define MOTHERBOARD BOARD_EINSY_1_0a
@@ -156,7 +156,7 @@
 // this value is litlebit higher that real limit, because ambient termistor is on the board and is temperated from it,
 // temperature inside the case is around 31C for ambient temperature 25C, when the printer is powered on long time and idle
 // the real limit is 15C (same as MINTEMP limit), this is because 15C is end of scale for both used thermistors (bed, heater)
-#define MINTEMP_MINAMBIENT      10
+#define MINTEMP_MINAMBIENT      0
 #define MINTEMP_MINAMBIENT_RAW  1002
 
 #define DEBUG_DCODE2
@@ -295,26 +295,26 @@
  *------------------------------------*/
 
 // Mintemps
-#define HEATER_0_MINTEMP 10
+#define HEATER_0_MINTEMP 0
 #define HEATER_MINTEMP_DELAY 15000                // [ms] ! if changed, check maximal allowed value @ ShortTimer
 #if HEATER_MINTEMP_DELAY>USHRT_MAX
 #error "Check maximal allowed value @ ShortTimer (see HEATER_MINTEMP_DELAY definition)"
 #endif
-#define BED_MINTEMP 10
+#define BED_MINTEMP 0
 #define BED_MINTEMP_DELAY 50000                   // [ms] ! if changed, check maximal allowed value @ ShortTimer
 #if BED_MINTEMP_DELAY>USHRT_MAX
 #error "Check maximal allowed value @ ShortTimer (see BED_MINTEMP_DELAY definition)"
 #endif
 #define SUPERPINDA_SUPPORT
-#define PINDA_MINTEMP 10
+#define PINDA_MINTEMP 0
 //#define PINDA_TEMP_COMP //Used to enable SuperPINDA toggle menu/function
 #define AMBIENT_MINTEMP -30
 
 // Maxtemps
 #if defined(E3D_PT100_EXTRUDER_WITH_AMP) || defined(E3D_PT100_EXTRUDER_NO_AMP)
-#define HEATER_0_MAXTEMP 410
+#define HEATER_0_MAXTEMP 450
 #else
-#define HEATER_0_MAXTEMP 305
+#define HEATER_0_MAXTEMP 330
 #endif
 #define BED_MAXTEMP 125
 #define AMBIENT_MAXTEMP 100
@@ -329,9 +329,9 @@
 //#define  DEFAULT_Kp 40.925
 //#define  DEFAULT_Ki 4.875
 //#define  DEFAULT_Kd 86.085
-#define  DEFAULT_Kp 16.13
-#define  DEFAULT_Ki 1.1625
-#define  DEFAULT_Kd 56.23
+#define  DEFAULT_Kp 17.48
+#define  DEFAULT_Ki 1.66
+#define  DEFAULT_Kd 46.01
 #endif
 
 // Extrude mintemp
@@ -500,14 +500,14 @@
  PREHEAT SETTINGS
  *------------------------------------*/
 
-#define PLA_PREHEAT_HOTEND_TEMP 215
+#define PLA_PREHEAT_HOTEND_TEMP 205
 #define PLA_PREHEAT_HPB_TEMP 60
 
-#define PVB_PREHEAT_HOTEND_TEMP 215
+#define PVB_PREHEAT_HOTEND_TEMP 205
 #define PVB_PREHEAT_HPB_TEMP 75
 
-#define ASA_PREHEAT_HOTEND_TEMP 260
-#define ASA_PREHEAT_HPB_TEMP 105
+#define ASA_PREHEAT_HOTEND_TEMP 250
+#define ASA_PREHEAT_HPB_TEMP 100
 
 #define PC_PREHEAT_HOTEND_TEMP 275
 #define PC_PREHEAT_HPB_TEMP 110
@@ -515,7 +515,7 @@
 #define PA_PREHEAT_HOTEND_TEMP 275
 #define PA_PREHEAT_HPB_TEMP 90
 
-#define ABS_PREHEAT_HOTEND_TEMP 255
+#define ABS_PREHEAT_HOTEND_TEMP 250
 #define ABS_PREHEAT_HPB_TEMP 100
 
 #define HIPS_PREHEAT_HOTEND_TEMP 220
@@ -524,10 +524,10 @@
 #define PP_PREHEAT_HOTEND_TEMP 254
 #define PP_PREHEAT_HPB_TEMP 100
 
-#define PET_PREHEAT_HOTEND_TEMP 230
-#define PET_PREHEAT_HPB_TEMP 85
+#define PET_PREHEAT_HOTEND_TEMP 220
+#define PET_PREHEAT_HPB_TEMP 80
 
-#define FLEX_PREHEAT_HOTEND_TEMP 240
+#define FLEX_PREHEAT_HOTEND_TEMP 205
 #define FLEX_PREHEAT_HPB_TEMP 50
 
 #define LCD_JUMP_HOTEND_TEMP 200
@@ -644,7 +644,7 @@
 //#define SUPPORT_VERBOSITY
 
 #define MMU_CONFIG_FILE "mmu2/variants/config_MMU2.h"
-#define MMU_FILAMENT_COUNT 5
+#define MMU_FILAMENT_COUNT 9
 //#define MMU_FORCE_STEALTH_MODE
 #define MMU_HWRESET
 #define MMU_DEBUG //print communication between MMU and printer on serial

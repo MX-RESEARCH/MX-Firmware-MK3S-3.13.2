@@ -10,7 +10,7 @@
 #define FAN_CHECK_DURATION 100 //100ms
 
 //Macro for print fan speed
-#define FAN_PULSE_WIDTH_LIMIT ((fanSpeed > 100) ? 3 : 4) //time in ms
+#define FAN_PULSE_WIDTH_LIMIT ((fanSpeed > 100) ? 1 : 3) //time in ms
 
 #ifdef FANCHECK
 volatile uint8_t fan_check_error = EFCE_OK;

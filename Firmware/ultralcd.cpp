@@ -4770,7 +4770,7 @@ static void lcd_disable_farm_mode()
 }
 
 static inline void load_all_wrapper(){
-    for(uint8_t i = 0; i < 5; ++i){
+    for(uint8_t i = 0; i < 9; ++i){
         MMU2::mmu2.load_filament(i);
     }
 }
@@ -4847,7 +4847,7 @@ static void mmu_cut_filament_menu() {
 #endif //MMU_HAS_CUTTER
 
 static inline void loading_test_all_wrapper(){
-    for(uint8_t i = 0; i < 5; ++i){
+    for(uint8_t i = 0; i < 9; ++i){
         MMU2::mmu2.loading_test(i);
     }
 
